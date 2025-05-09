@@ -10,37 +10,234 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
-
-  // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
-
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  title: 'MaskTAP Document | MaskTAP',
+  url: 'https://www.masktop.com',
+  baseUrl: '/docs/',
+  favicon: 'assets/favicon.svg',
+  trailingSlash: true,
+  /*
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'cn',
+    locales: ['cn', 'en'],
+    path: 'i18n',
+    localeConfigs: {
+      cn: {
+        label: '简体中文',
+        direction: 'ltr',
+        htmlLang: 'zh-CN',
+        calendar: 'gregory',
+        path: 'zh',
+      },
+      en: {
+        label: 'English',
+        direction: 'rtl',
+        htmlLang: 'en-US',
+        calendar: 'persian',
+        path: 'en',
+      },
+    },
   },
-
+  */
+  noIndex: false,
+  onBrokenLinks: 'throw',
+  // onBrokenAnchors: 
+  onBrokenMarkdownLinks: 'warn',
+  // onDuplicateRoutes: 
+  tagline: 'Dinosaurs are cool',
+  organizationName: 'OvrkAI',
+  projectName: 'Docs',
+  deploymentBranch: 'gh-pages',
+  // githubHost: 'github.com',
+  // githubPort: '22',
+  themeConfig: {
+    docs: {
+      versionPersistence: 'localStorage',
+      sidebar: {
+        hideable: false,
+        autoCollapseCategories: false,
+      },
+    },
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+    },
+    image: 'assets/docusaurus-social-card.jpg',
+    Metadata: [
+        {name: 'og:image', content: 'assets/og-image-default.svg'},
+        ],
+    announcementBar: {
+        id: 'id',
+        content:'We are looking to revamp our docs, please fill <a target="_blank" rel="noopener noreferrer" href="#">this survey</a>',
+        backgroundColor: '#fafbfc',
+        textColor: '#091E42',
+        isCloseable: false,
+    },
+    blog: {
+      sidebar: {
+        groupByYear: true,
+      },
+    },
+    navbar: {
+      title: 'Site Title',
+      logo: {
+        alt: 'Site Logo',
+        src: 'img/logo.svg',
+        srcDark: 'img/logo-dark.svg',
+        href: '/',
+        width: 32,
+        height: 32,
+        target: '_sref',
+        className: 'custom-navbar-logo-class',
+        style: {border: 'solid red'},
+      },
+      /*
+      items: [
+        {
+          type: 'doc',
+          position: 'left',
+          docId: 'introduction',
+          label: 'Docs',
+        },
+        {to: 'blog', label: 'Blog', position: 'left'},
+        {
+          type: 'docsVersionDropdown',
+          position: 'right',
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/facebook/docusaurus',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
+        },
+        {
+          type: 'dropdown',
+          label: 'Community',
+          position: 'left',
+          items: [
+            {
+              label: 'Facebook',
+              href: 'https://www.facebook.com',
+            },
+            {
+              type: 'doc',
+              label: 'Social',
+              docId: 'social',
+            },
+            // ... more items
+          ],
+        },
+        /*
+        {
+            type: 
+            label: 
+            html: 
+            to: 
+            href: 
+            prependBaseUrlToHref: 
+            position: 
+            activeBasePath: 
+            activeBaseRegex: 
+            className: 
+        },
+        
+        {
+          type: 'doc',
+          position: 'left',
+          docId: 'introduction',
+          label: 'Docs',
+        },
+        {
+          type: 'docSidebar',
+          position: 'left',
+          sidebarId: 'api',
+          label: 'API',
+        },
+        {
+          type: 'search',
+          position: 'right',
+        },
+        {
+          type: 'html',
+          position: 'right',
+          value: '<button>Give feedback</button>',
+        },
+        
+      ],
+      */
+      hideOnScroll: false,
+      style: 'primary',
+    },
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+      defaultLanguage: 'javascript',
+    },
+    footer: {
+      logo: {
+        alt: 'Meta Open Source Logo',
+        src: 'img/meta_oss_logo.png',
+        href: 'https://opensource.fb.com',
+        width: 160,
+        height: 51,
+      },
+      copyright: `Copyright © 2024-${new Date().getFullYear()} MaskTAP All rights reserved.`,
+      style: 'dark',
+      /*
+      links: [
+      {
+        title: 'Docs',
+        items: [
+          {
+            label: 'Style Guide',
+            to: 'docs/',
+          },
+          {
+            label: 'Second Doc',
+            to: 'docs/doc2/',
+          },
+        ],
+      },
+      {
+        title: 'Community',
+        items: [
+          {
+            label: 'Stack Overflow',
+            href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+          },
+          {
+            label: 'Discord',
+            href: 'https://discordapp.com/invite/docusaurus',
+          },
+          {
+            label: 'X',
+            href: 'https://x.com/docusaurus',
+          },
+          {
+            html: `
+                <a href="https://www.netlify.com" target="_blank" rel="noreferrer noopener" aria-label="Deploys by Netlify">
+                  <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
+                </a>
+              `,
+          },
+        ],
+      },
+    ],
+    */
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 5,
+    },
+    },
+  },
+  /*
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+     ({
         docs: {
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
@@ -69,83 +266,6 @@ const config = {
       }),
     ],
   ],
-
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
-      navbar: {
-        title: 'My Site',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
-        },
-        items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
-      },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      },
-      prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-      },
-    }),
+  */
 };
-
 export default config;
