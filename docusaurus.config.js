@@ -11,10 +11,13 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'MaskTAP Document | MaskTAP',
-  url: 'https://www.masktop.com',
-  baseUrl: '/docs/',
+  // url: 'https://www.masktop.com',
+  baseUrl: '/',
   favicon: 'assets/favicon.svg',
-  trailingSlash: true,
+  trailingSlash: false,
+  organizationName: "voidluce",
+  projectName: "Docusaurus",
+  deploymentBranch: "gh-pages"
   /*
   i18n: {
     defaultLocale: 'cn',
@@ -44,9 +47,9 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   // onDuplicateRoutes: 
   tagline: 'Dinosaurs are cool',
-  organizationName: 'OvrkAI',
-  projectName: 'Docs',
-  deploymentBranch: 'gh-pages',
+  // organizationName: 'OvrkAI',
+  // projectName: 'Docs',
+  // deploymentBranch: 'gh-pages',
   // githubHost: 'github.com',
   // githubPort: '22',
   themeConfig: {
